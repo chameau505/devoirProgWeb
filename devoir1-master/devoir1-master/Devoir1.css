@@ -55,7 +55,7 @@ td{
 }
 
 
-div{
+td div{
 	text-align: center;
 }
 
@@ -117,19 +117,31 @@ li.menu:hover
 
 
 /* affichage des sous-menus*/
-li.menu:hover ul
-{
-    
 
-    display: block;
-    background-color:black;
-    color: white;
-    font-weight: bold;
+
+iframe{
+	position: relative;
+	width: 75%;
+    margin-left:  285px;
+	margin-top: -45px;
+	padding-left: 15px;
+	padding-right: 15px;
+
 }
 
+label{
 
-li ul {
-	list-style: none;
-	display: none;
+	width: 150px;
+	float: left;
 }
 
+input {
+
+	display: inline-block;
+
+}
+
+div{
+
+	margin-bottom: 10px;
+}

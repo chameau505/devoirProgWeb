@@ -5,7 +5,10 @@
 		<meta charset="utf-8">
 		<title>Loisir pour étudiant</title>
 		<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
-		<link rel="stylesheet" href="Devoir1.css" type="text/css" />	
+		<link rel="stylesheet" href="Devoir1.css" type="text/css" />
+		<script src="scripte.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
 	</head>
 	
 
@@ -18,29 +21,15 @@
 		<nav>
 
 		    <ul class="nav">
-		        <li class="menu"> Accueil
-		        	<ul>
-			        	<li>item 1</li>
-			        	<li>item 2</li>
-		        	</ul>
-		    	</li>
-			    <li class="menu"> S'inscrire 
-			    	<ul>
-			        	<li>item 1</li>
-			        	<li>item 2</li>
-		        	</ul></li>
-			    <li class="menu"> Localiser une activité 
-			    	<ul>
-			        	<li>item 1</li>
-			        	<li>item 2</li>
-		        	</ul></li>
-
+		        <li id='bAcceuil' class="menu"> Accueil</li>
+			    <li id='bInscrire' class="menu"> S'inscrire </li>
+			    <li id='bLocaliser'class="menu"> Localiser une activité </li>
 			</ul>
 
 		</nav>
 
 		<!-- Contenu -->
-		<section class="contenu">
+		<section id="accueil" class="contenu">
 			
 
 
@@ -105,8 +94,141 @@
 	        <br>
     	</section>
 	
+
+    	<section id="inscrire" class="contenu">
+    		<h1>inscrivez vous</h1>
+    		<form >
+
+				<div >
+					<label for="lname">Nom : </label>
+					<input type="text" name="lastname" id ="lname" size="20" />
+				</div class ="clearboth">
+				
+
+				<div>
+					<label>Prénom : </label> 
+					<input type="text" name="firstname"  size="20" placeholder ="Votre nom ici"/>
+				</div>
+				
+				<div>
+					<label>date de naissence : </label> 
+					<input type="date" name="dateDeNaissence"  size="20" placeholder ="Votre nom ici"/>
+				</div>
+				<div>
+				<div>
+					<label>Sexe : </label>
+				
+					<input type="radio" name="sex" value="Masculin" /> Homme :
+					<input type="radio" name="sex" checked ="checked" value="Feminin" />femmme :
+				
+				</div>
+</div>
+				<div>
+					<label>Activité : </label>
+				
+					<select name="activités">
+						<option value="Natation">Natation</option>
+						<option value="Badminton">Badminton</option>
+						<option value="Randonnée">Randonnée</option>
+						<option value="Kayak">Kayak</option>
+						<option value="Vélo">Vélo</option>
+						<option value="Echecs">Echecs</option>
+					</select>
+				
+				</div>
+
+				<div >
+					<label>motivation :</label>
+					<textarea rows="13" cols="50" name="comments" ></textarea>
+				</div>
+
+				
+				<div>
+					<input type="reset" value="Effacer" />
+					<input type="submit" value="Soumettre" size="20" />
+				</div>
+		
+		</form>
+
+
+    	</section>
+		<section id='localiser' >
+			 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2754.1202438285072!2d-72.57906988489516!3d46.34715788211406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc7c8cb9aadbb03%3A0x36f5dd28a30395a8!2zVW5pdmVyc2l0w6kgZHUgUXXDqWJlYyDDoCBUcm9pcy1SaXZpw6hyZXM!5e0!3m2!1sfr!2sca!4v1541356543390" 
+			 width="600" 
+			 height="450" 
+			 frameborder="0" 
+			 style="border:0" 
+			 allowfullscreen>
+			 	
+			 </iframe>
+	
+		</section>
 	</body>
 	
+	<script>
+	   		jQuery(document).ready(function(){
+	          	$('#bAcceuil').css('background-color','black');
+				$('#bAcceuil').css('color','white');
+	          	$('#inscrire').css('display','none');
+	          	$('#localiser').css('display','none');
+
+				$('#bAcceuil').click(function(){
+					$('#accueil').css('display','block');
+					$('#bAcceuil').css('color','white');
+					$('#bAcceuil').css('background-color','black');
+
+					$('#inscrire').css('display','none');
+					$('#bInscrire').css('color','black');
+					$('#bInscrire').css('background-color','white');
+
+				    $('#localiser').css('display','none');
+					$('#bLocaliser').css('color','black');
+					$('#bLocaliser').css('background-color','white');
+				});
+
+
+
+	          	$('#bInscrire').click(function(){
+	          		$('#accueil').css('display','none');
+	          		$('#bAcceuil').css('color','black');
+	          		$('#bAcceuil').css('background-color','white');
+
+					
+					$('#inscrire').css('display','block');
+					$('#bInscrire').css('color','white');
+					$('#bInscrire').css('background-color','black');
+					
+					$('#localiser').css('display','none');
+					$('#bLocaliser').css('color','black');
+					$('#bLocaliser').css('background-color','white');
+				    
+				    
+				});
+
+
+				$('#bLocaliser').click(function(){
+					$('#accueil').css('display','none');
+					$('#bAcceuil').css('color','black');
+					$('#bAcceuil').css('background-color','white');
+
+					$('#inscrire').css('display','none');
+					$('#bInscrire').css('color','black');
+					$('#bInscrire').css('background-color','white');
+
+				    $('#localiser').css('display','block');
+					$('#bLocaliser').css('color','white');
+					$('#bLocaliser').css('background-color','black');
+				});
+
+	       
+	          	$( function() {
+    				$( "#bob" ).draggable();
+ 				 } );
+
+
+
+       });
+   	  </script>
 
 </html>
 	
